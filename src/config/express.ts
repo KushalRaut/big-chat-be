@@ -7,6 +7,14 @@ app.use(express.json());
 
 // app.use("/api/v1", router);
 
+const router = express.Router();
+
+router.get("/", (req, res) => {
+  res.status(200).json({ message: "Server is up and running" });
+});
+
+app.use("/api/v1", router);
+
 app.use(
   (
     err: any,
